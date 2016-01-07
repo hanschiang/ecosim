@@ -1,10 +1,13 @@
 # Try to design a imaginary universe like the author of The Three-Body Problem mentioned in his book.
 
 from random import randint
-from decimal import *
 
 # Worlds Simulation
-# Attributes
+#
+# The Universe
+#   Defined as a plane
+#
+# World Attributes
 #   world_size
 #   resource
 #   population
@@ -21,6 +24,15 @@ from decimal import *
 #
 # Other considerations:
 #   time
+
+
+# Define Universe
+universe_center = [0, 0]
+
+print "\n"
+print "The center of the Universe is:", universe_center
+
+
 
 # 1st world: Equilibrium One
 
@@ -50,10 +62,10 @@ print "inter world activity =", inter_world_activity
 # Define initial state
 world_name = "Dead One"
 world_size = randint(1, 100)
-resource_fraction_base = int(world_size - 1)
+resource_fraction_base = world_size
 resource = randint(1, resource_fraction_base)
 population_min = int(resource + 1)
-population_max = int(world_size)
+population_max = int(world_size + 1)
 population = randint(population_min, population_max)
 world_occupied_rate = int(float(population) / float(world_size) * 1000) / 100.0
 life_standard = int(float(resource) / float(population) * 1000) / 10.0
@@ -84,6 +96,9 @@ population_max = int(world_size)
 population = randint(population_min, population_max)
 world_occupied_rate = int(float(population) / float(world_size) * 1000) / 100.0
 inter_world_activity = 0
+coordinate_x = randint(0, 10 ** 14)
+coordinate_y = randint(0, 10 ** 14)
+planet_coordinates = [coordinate_x, coordinate_y]
 
 if population == 0:
   life_standard = 0
@@ -98,6 +113,7 @@ else:
 
 print "\n"
 print world_name, "Status:"
+print "planet coordinates =", planet_coordinates
 print "world size =", world_size
 print "resource = ", resource
 print "population =", population
