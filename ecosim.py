@@ -86,9 +86,12 @@ inter_world_activity = 0
 
 if population == 0:
   life_standard = 0
-  society_lifetime_left = 0
 else:
   life_standard = int(float(resource) / float(population) * 1000) / 10.0
+
+if resource - population < 0:
+  society_lifetime_left = 0
+else:
   society_lifetime_left = resource - population
 
 
