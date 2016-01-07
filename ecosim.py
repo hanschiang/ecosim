@@ -10,6 +10,7 @@ from decimal import *
 #   population
 #   world_occupied_rate
 #   life_standard
+#   distance_between_worlds(a, b)
 #   inter_world_activity
 #   inter_world_population_change
 #   inter_world_trade_efficiency
